@@ -1,13 +1,12 @@
 import { DescriptionDiv, Pic, Name, Tag, Location } from './Description.styled';
 
-export const Description = ({ url, userInfo: { username, tag, location } }) => {
-  // console.log(username);
+export const Description = ({ url, username, tag, location }) => {
   return (
     <DescriptionDiv>
-      <Pic src={url} alt="User avatar" className="avatar" />
-      <Name className="name">{username}</Name>
-      <Tag className="tag">@{tag}</Tag>
-      <Location className="location">{location}</Location>
+      <Pic src={url} alt="User avatar" />
+      <Name>{username}</Name>
+      <Tag>@{tag}</Tag>
+      <Location>{location}</Location>
     </DescriptionDiv>
   );
 };

@@ -1,13 +1,12 @@
 import { Statistic } from './Statistics.styled';
 import { Title } from './Title/Title.styled';
 import { List } from './List/List';
-import data from './data.json';
 
-export const Statistics = () => {
+export const Statistics = ({ title, stats }) => {
   return (
     <Statistic>
-      <Title>Upload stats</Title>
-      <List data={data} />
+      {title && <Title>{title}</Title>}
+      <List data={stats} />
     </Statistic>
   );
 };

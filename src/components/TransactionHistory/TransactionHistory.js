@@ -1,4 +1,3 @@
-import data from './transactions.json';
 import {
   TableBody,
   TableHead,
@@ -6,9 +5,9 @@ import {
   TableRow,
 } from './TransactionHistory.styled';
 
-export const TransactionHistory = () => {
+export const TransactionHistory = ({ items }) => {
   return (
-    <TransactionTable className="transaction-history">
+    <TransactionTable>
       <TableHead>
         <tr>
           <th>Type</th>
@@ -18,7 +17,7 @@ export const TransactionHistory = () => {
       </TableHead>
 
       <TableBody>
-        {data.map(element => {
+        {items.map(element => {
           return (
             <TableRow key={element.id}>
               <td>{element.type}</td>

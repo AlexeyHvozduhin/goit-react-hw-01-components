@@ -1,28 +1,17 @@
-import { List, ListElement, Name, Online } from './FriendList.styled';
-import arrayFriend from './friends.json';
+import { List } from './FriendList.styled';
+import { FriendListItem } from './FriendListItem';
 
-const onlineFunction = result => {
-  if (result) return 'green';
-  else return 'red';
-};
-
-export const FriendList = () => {
+export const FriendList = ({ friends }) => {
   return (
     <List>
-      {arrayFriend.map(element => {
+      {friends.map(element => {
         return (
-          <ListElement className="item" key={element.id}>
-            <Online
-              style={{ backgroundColor: onlineFunction(element.isOnline) }}
-            ></Online>
-            <img
-              className="avatar"
-              src={element.avatar}
-              alt="User avatar"
-              width="48"
-            />
-            <Name className="name">{element.name}</Name>
-          </ListElement>
+          <FriendListItem
+            key={element.id}
+            avatar={element.avatar}
+            name={element.name}
+            isOnline={element.isOnline}
+          />
         );
       })}
     </List>

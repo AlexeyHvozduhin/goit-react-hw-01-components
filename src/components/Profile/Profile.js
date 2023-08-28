@@ -2,13 +2,17 @@ import { Profiles } from './Profile.styled';
 
 import { Description } from './Description/Description';
 import { PersonStatistics } from './PersonalStatistics/PersonStatistics';
-import user from './user.json';
 
-export const Profile = () => {
+export const Profile = ({ username, tag, avatar, location, stats }) => {
   return (
     <Profiles>
-      <Description url={user.avatar} userInfo={user} />
-      <PersonStatistics stats={user.stats} />
+      <Description
+        url={avatar}
+        username={username}
+        tag={tag}
+        location={location}
+      />
+      <PersonStatistics stats={stats} />
     </Profiles>
   );
 };

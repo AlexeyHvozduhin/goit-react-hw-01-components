@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+const colorRandomize = () => {
+  const rainbowColors = [
+    '#FF000050', // Red
+    '#FF7F0050', // Orange
+    '#FFFF0050', // Yellow
+    '#00FF0050', // Green
+    '#0000FF50', // Blue
+    '#4B008250', // Indigo
+    '#9400D350', // Violet
+  ];
+  const randomIndex = Math.floor(Math.random() * rainbowColors.length);
+  return rainbowColors[randomIndex];
+};
+
 export const ElementList = styled.ul`
   list-style-type: none;
   color: white;
@@ -20,6 +34,7 @@ export const Element = styled.li`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ${colorRandomize};
 `;
 
 export const Label = styled.span`
